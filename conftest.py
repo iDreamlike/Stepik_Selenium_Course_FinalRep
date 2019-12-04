@@ -13,8 +13,8 @@ def browser(request):
     language = request.config.getoption("language")
     options = Options()
     options.add_experimental_option('prefs', {'intl.accept_languages': language})
-    link = "http://selenium1py.pythonanywhere.com/catalogue/the-shellcoders-handbook_209?promo=midsummer"
-    # link = "http://selenium1py.pythonanywhere.com"
+    # link = "http://selenium1py.pythonanywhere.com/catalogue/the-shellcoders-handbook_209?promo=midsummer"
+    link = "http://selenium1py.pythonanywhere.com"
     browser = webdriver.Chrome(options=options)
     browser.get(link)
     yield browser
