@@ -14,3 +14,9 @@ class LoginPage(BasePage):
 
     def should_be_login_in_url(self):
         assert "login" in self.browser.current_url, "Can't find 'login' in current URL"
+
+    def register_new_user(self, email, password):
+        self.browser.find_element(*LoginPageLocators.REGISTRATION_LOGIN_FIELD).send_keys(email)
+        self.browser.find_element(*LoginPageLocators.REGISTRATION_PASSWORD_FIELD1).send_keys(password)
+        self.browser.find_element(*LoginPageLocators.REGISTRATION_PASSWORD_FIELD2).send_keys(password)
+        self.browser.find_element(*LoginPageLocators.REGISTRATION_BUTTON).click()
