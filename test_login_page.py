@@ -6,5 +6,5 @@ def test_guest_login_set(browser):
     page = LoginPage(browser, link)
     page.open()
     page.should_be_login_form()
-    page.should_be_login_link()
     page.should_be_register_form()
+    page.should_be_login_link()
