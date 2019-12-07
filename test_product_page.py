@@ -18,7 +18,7 @@ class TestUserAddToBasketFromProductPage():
 
     def test_user_can_add_product_to_basket(self, browser):
         page = ProductPage(browser, browser.current_url)
-        page.open()
+        # page.open()
         page.browser.get('http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer0')
         page.add_product_to_basket()
         page.solve_quiz_and_get_code()

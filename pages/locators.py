@@ -1,11 +1,20 @@
 from selenium.webdriver.common.by import By
 
 
+class AccountPageLocators():
+    ADDRESS_BOOK_LINK = (By.CSS_SELECTOR, ".page_inner aside.sidebar > ul > li:nth-child(3) > a")
+    ADD_NEW_ADDRESS_BUTTON = (By.CSS_SELECTOR, "#default > div.container-fluid.page > div > div > div > p > a")
+
+
 class BasePageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
     VIEW_BASKET_BUTTON = (By.CSS_SELECTOR, "div.basket-mini > span > a")
     USER_ICON = (By.CSS_SELECTOR, ".icon-user")
+    SEARCH_BUTTON = (By.CSS_SELECTOR, "#browse + form input.btn")
+    SEARCH_FIELD = (By.ID, "id_q")
+    SEARCH_RESULT_PRODUCT_NAME = (By.CSS_SELECTOR, "section > div > ol > li > article > h3 > a")
+    ACCOUNT_LINK = (By.CSS_SELECTOR, "#top_page ul > li:nth-child(1) > a")
 
 
 class BasketPageLocators():

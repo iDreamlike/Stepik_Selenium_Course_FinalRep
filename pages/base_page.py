@@ -5,7 +5,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 from .locators import BasePageLocators
-from .locators import MainPageLocators
+# from .locators import MainPageLocators
 
 
 class BasePage():
@@ -14,10 +14,13 @@ class BasePage():
         self.url = url
         self.browser.implicitly_wait(timeout)
 
+    def go_to_account(self):
+        account_link = self.browser.find_element(*BasePageLocators.ACCOUNT_LINK)
+        account_link.click()
+
     def go_to_basket(self):
         button = self.browser.find_element(*BasePageLocators.VIEW_BASKET_BUTTON)
         button.click()
-
 
     def go_to_login_page(self):
         link = self.browser.find_element(*BasePageLocators.LOGIN_LINK)
@@ -49,6 +52,18 @@ class BasePage():
 
     def open(self):
         self.browser.get(self.url)
+
+    def search(self, product_to_find):
+        text_area = self.browser.find_element(*BasePageLocators.SEARCH_FIELD)
+        text_area.clear()
+        text_area.send_keys(product_to_find)
+        button = self.browser.find_element(*BasePageLocators.SEARCH_BUTTON)
+        button.click()
+
+    def search_result_check(self, product_to_check):
+        result_of_seek = self.browser.find_element(*BasePageLocators.SEARCH_RESULT_PRODUCT_NAME).text
+        assert product_to_check in result_of_seek,\
+            "Название найденного товара не совпадает с тестируемым"
 
     def solve_quiz_and_get_code(self):
         alert = self.browser.switch_to.alert
