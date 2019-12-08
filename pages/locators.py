@@ -4,6 +4,19 @@ from selenium.webdriver.common.by import By
 class AccountPageLocators():
     ADDRESS_BOOK_LINK = (By.CSS_SELECTOR, ".page_inner aside.sidebar > ul > li:nth-child(3) > a")
     ADD_NEW_ADDRESS_BUTTON = (By.CSS_SELECTOR, "#default > div.container-fluid.page > div > div > div > p > a")
+    ADD_NEW_ADDRESS_TITLE_FIELD = (By.ID, "id_title")
+    ADD_NEW_ADDRESS_FIRST_NAME_FIELD = (By.ID, "id_first_name")
+    ADD_NEW_ADDRESS_LAST_NAME_FIELD = (By.ID, "id_last_name")
+    ADD_NEW_ADDRESS_FIRST_LINE_ADDR_FIELD = (By.ID, "id_line1")
+    ADD_NEW_ADDRESS_SECOND_LINE_ADDR_FIELD = (By.ID, "id_line2")
+    ADD_NEW_ADDRESS_THIRD_LINE_ADDR_FIELD = (By.ID, "id_line3")
+    ADD_NEW_ADDRESS_CITY_FIELD = (By.ID, "id_line4")
+    ADD_NEW_ADDRESS_STATE_FIELD = (By.ID, "id_state")
+    ADD_NEW_ADDRESS_ZIP_FIELD = (By.ID, "id_postcode")
+    ADD_NEW_ADDRESS_COUNTRY_FIELD = (By.ID, "id_country")
+    ADD_NEW_ADDRESS_PHONE_FIELD = (By.ID, "id_phone_number")
+    ADD_NEW_ADDRESS_INSTRUCTIONS_FIELD = (By.ID, "id_notes")
+    ADD_NEW_ADDRESS_SAVE_BUTTON = (By.CSS_SELECTOR, ".col-sm-offset-4 button")
 
 
 class BasePageLocators():
